@@ -1,12 +1,21 @@
 {% extends 'base.html' %}
+{% include 'home.css'%}
 {% block title %}Home{% endblock %}
 {% block content %}
 {% if user.is_authenticated %}
-Hi {{ user.username }}!
-<a href="{% url 'dam' %}"><button>Dam</button></a>
-<p><a href="{% url 'logout' %}">Log Out</a></p>
-{% else %}
-<p>You are not logged in</p>
-<a href="{% url 'login' %}">Log In</a>
-{% endif %}
-{% endblock %}
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid main-navbar">
+        <a class="btn btn-primary" role="button" aria-disabled="true" href="{% url 'damentry' %}"">Dam</a>
+        <a class=" btn btn-primary" role="button" aria-disabled="true" href="#"">Staff</a>
+        <a class=" btn btn-primary" role="button" aria-disabled="true" href="#"">Department</a>
+        <a class=" btn btn-primary" role="button" aria-disabled="true" href="#"">Fish</a>
+        <a class=" btn btn-primary" role="button" aria-disabled="true" href="#"">Credit</a>
+        <a class=" btn btn-primary" role="button" aria-disabled="true" href="#"">Sales</a>
+    </div>
+</nav>
+<p><a href=" {% url 'logout' %}">Log Out</a></p>
+        {% else %}
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}">Log In</a>
+        {% endif %}
+        {% endblock %}

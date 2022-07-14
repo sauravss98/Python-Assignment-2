@@ -1,10 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
+
 <body>
-$END$
+    <form method="POST" class="post-form" action="/update/{{staff.id}}">
+        {% csrf_token %}
+        <div class="container">
+            <br>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label"></label>
+                <div class="col-sm 4">
+                    <h3>Update Details</h3>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label">Staff ID:</label>
+                <div class="col-sm 4">
+                    <input type="text" name="staffid" id="id_staffid" value="{{ staff.staffid }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label">Dam Location:</label>
+                <div class="col-sm 4">
+                    <input type="text" name="staffname" id="id_staffname" value="{{ staff.staffname }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label">Staff Email:</label>
+                <div class="col-sm 4">
+                    <input type="text" name="staffEmail" id="id_staffEmail" value="{{ staff.staffEmail }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label">Staff Image:</label>
+                <div class="col-sm 4">
+                    <input type="text" name="staffImage" id="id_staffImage" value="{{ staff.staffImage }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label"></label>
+                <div class="col-sm 4">
+                    <button type="submit" class="btn btn-success">Update</button>
+                </div>
+            </div>
+        </div>
+    </form>
 </body>
+
 </html>

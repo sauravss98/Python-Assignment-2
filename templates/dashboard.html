@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="btn btn-primary" role="button" aria-disabled="true" href="{% url 'dashboard'%}">Dashboard</a>
+    </div>
+</nav>
+<a href="{% url 'damentry' %}"><button>Dam</button></a>
+<a href="#"><button>Staff</button></a>
+{% endblock %}
