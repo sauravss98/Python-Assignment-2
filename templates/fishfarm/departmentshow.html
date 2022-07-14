@@ -22,21 +22,19 @@
     <table class=" table table-striped table-bodered table-sm">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Dam Name</th>
-                        <th>Dam Location</th>
-                        <th>Dam Height</th>
+                        <th>Department Name</th>
+                        <th>Department Count</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for dam in dams %}
+                    {% for department in departments %}
                     <tr>
-                        <td>{{ dam.damName }}</td>
-                        <td>{{ dam.damLocation }}</td>
-                        <td>{{ dam.damHeight }}</td>
+                        <td>{{ department.departmentName }}</td>
+                        <td>{{ department.departmentCount }}</td>
                         <td>
-                            <a href="/edit/{{ dam.id }}"><button type="button" class="btn btn-outline-primary btn-sm">Edit</button></a>
-                            <a href="/delete/{{ dam.id }}"><button type="button" class="btn btn-outline-primary btn-sm">Delete</button></a>
+                            <a href="/departmentedit/{{ department.id }}"><button type="button" class="btn btn-outline-primary btn-sm">Edit</button></a>
+                            <a href="/departmentdelete/{{ department.id }}"><button type="button" class="btn btn-outline-primary btn-sm">Delete</button></a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -44,7 +42,6 @@
                 </table>
                 <br>
                 <br>
-                <center><a href="{% url 'dam' %}" class="btn btn-primary">Add New Record</a></center>
+                <center><a href="{% url 'departmentadd' %}" class="btn btn-primary">Add New Record</a></center>
 </body>
-
 </html>

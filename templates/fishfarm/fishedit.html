@@ -9,7 +9,7 @@
 </head>
 
 <body>
-      <form action="" method="POST" enctype="multipart/form-data">
+    <form method="POST" class="post-form" action="/fishupdate/{{fish.id}}">
         {% csrf_token %}
         <div class="container">
             <br>
@@ -20,30 +20,21 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-1 col-form-label">Staff ID:</label>
+                <label class="col-sm-1 col-form-label">Fish Name:</label>
                 <div class="col-sm 4">
-                    <input type="text" name="staffid" id="id_staffid" value="{{ staff.staffid }}">
+                    <input type="text" name="fishName" id="id_fishName" value="{{ fish.fishName }}">
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-1 col-form-label">Dam Location:</label>
+                <label class="col-sm-1 col-form-label">Fish Count:</label>
                 <div class="col-sm 4">
-                    <input type="text" name="staffname" id="id_staffname" value="{{ staff.staffname }}">
+                    <input type="text" name="fishCount" id="id_fishCount" value="{{ fish.fishCount }}">
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-1 col-form-label">Staff Email:</label>
+                <label class="col-sm-1 col-form-label">Fish Sold:</label>
                 <div class="col-sm 4">
-                    <input type="text" name="staffEmail" id="id_staffEmail" value="{{ staff.staffEmail }}">
-                </div>
-            </div>
-            <div class="form-group row">
-                {% if staff.staffImage %}
-                                <img src="{{staff.staffImage.url}}" alt="image here" class="prod-size">
-                {% endif %}
-                <label class="col-sm-1 col-form-label">Staff Image:</label>
-                <div class="col-sm 4">
-                    <input type="file" name="staffImage" id="id_staffImage" value="{{ staff.staffImage }}">
+                    <input type="text" name="fishSold" id="id_fishSold" value="{{ fish.fishSold }}">
                 </div>
             </div>
             <div class="form-group row">

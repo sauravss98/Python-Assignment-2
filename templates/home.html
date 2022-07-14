@@ -1,21 +1,37 @@
 {% extends 'base.html' %}
-{% include 'home.css'%}
+{% include 'home.css' %}
 {% block title %}Home{% endblock %}
 {% block content %}
 {% if user.is_authenticated %}
+
+
 <nav class="navbar navbar-dark bg-primary">
     <div class="container-fluid main-navbar">
-        <a class="btn btn-primary" role="button" aria-disabled="true" href="{% url 'damentry' %}"">Dam</a>
-        <a class=" btn btn-primary" role="button" aria-disabled="true" href="#"">Staff</a>
-        <a class=" btn btn-primary" role="button" aria-disabled="true" href="#"">Department</a>
-        <a class=" btn btn-primary" role="button" aria-disabled="true" href="#"">Fish</a>
-        <a class=" btn btn-primary" role="button" aria-disabled="true" href="#"">Credit</a>
-        <a class=" btn btn-primary" role="button" aria-disabled="true" href="#"">Sales</a>
+        <a class="btn btn-primary" role="button" aria-disabled="true" href="{% url 'damentry' %}">Dam</a>
+        <a class=" btn btn-primary" role="button" aria-disabled="true" href="#">Staff</a>
+        <a class=" btn btn-primary" role="button" aria-disabled="true" href="#">Department</a>
+        <a class=" btn btn-primary" role="button" aria-disabled="true" href="fishshow">Fish</a>
+        <a class=" btn btn-primary" role="button" aria-disabled="true" href="#">Credit</a>
+        <a class=" btn btn-primary" role="button" aria-disabled="true" href="#">Sales</a>
     </div>
 </nav>
-<p><a href=" {% url 'logout' %}">Log Out</a></p>
-        {% else %}
-        <p>You are not logged in</p>
-        <a href="{% url 'login' %}">Log In</a>
-        {% endif %}
-        {% endblock %}
+<div class="container-fluid">
+    <h1 class="heading1">Welcome to The Home Page</h1>
+
+    <div class="card" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a class="btn btn-primary " role="button" aria-disabled="true"
+                    href="{% url 'damentry' %}">Dam</a></li>
+            <li class="list-group-item"><a class=" btn btn-primary" role="button" aria-disabled="true"
+                    href="fishshow">Fish</a>
+            <li class="list-group-item"><a class="btn btn-danger " role="button" aria-disabled="true"
+                    href=" {% url 'logout' %}">Log Out</a></li>
+        </ul>
+    </div>
+</div>
+<!-- <p><a href=" {% url 'logout' %}">Log Out</a></p> -->
+{% else %}
+<p>You are not logged in</p>
+<a href="{% url 'login' %}">Log In</a>
+{% endif %}
+{% endblock %}

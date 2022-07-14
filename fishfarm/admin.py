@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import ManageStaff,ManageDam,ManageFish,ManageCredit,ManageDepartment,ManageSales,ManageTimeline
+from .models import ManageDam, ManageFish, ManageCredit, ManageDepartment, ManageSales, ManageTimeline, ManageStaff
+
 # Register your models here.
 admin.site.register(ManageStaff)
 admin.site.register(ManageDam)

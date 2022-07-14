@@ -22,21 +22,21 @@
     <table class=" table table-striped table-bodered table-sm">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Dam Name</th>
-                        <th>Dam Location</th>
-                        <th>Dam Height</th>
+                        <th>Fish Name</th>
+                        <th>Fish Count</th>
+                        <th>Fish Sold</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for dam in dams %}
+                    {% for fish in fishs %}
                     <tr>
-                        <td>{{ dam.damName }}</td>
-                        <td>{{ dam.damLocation }}</td>
-                        <td>{{ dam.damHeight }}</td>
+                        <td>{{ fish.fishName }}</td>
+                        <td>{{ fish.fishCount }}</td>
+                        <td>{{ fish.fishSold }}</td>
                         <td>
-                            <a href="/edit/{{ dam.id }}"><button type="button" class="btn btn-outline-primary btn-sm">Edit</button></a>
-                            <a href="/delete/{{ dam.id }}"><button type="button" class="btn btn-outline-primary btn-sm">Delete</button></a>
+                            <a href="/fishedit/{{ fish.id }}"><button type="button" class="btn btn-outline-primary btn-sm">Edit</button></a>
+                            <a href="/fishdelete/{{ fish.id }}"><button type="button" class="btn btn-outline-primary btn-sm">Delete</button></a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -44,7 +44,6 @@
                 </table>
                 <br>
                 <br>
-                <center><a href="{% url 'dam' %}" class="btn btn-primary">Add New Record</a></center>
+                <center><a href="{% url 'fishadd' %}" class="btn btn-primary">Add New Record</a></center>
 </body>
-
 </html>

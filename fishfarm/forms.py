@@ -10,3 +10,14 @@ class StaffForm(forms.ModelForm):
     class Meta:
         model=ManageStaff
         fields=['staffid','staffname','staffEmail','staffImage']
+
+class FishForm(forms.ModelForm):
+    class Meta:
+        model=ManageFish
+        fields=['fishName','fishCount','fishSold']
+
+
+class DepartmentForm(forms.ModelForm):
+    class Meta:
+        model=ManageDepartment
+        fields=['departmentName','departmentCount']

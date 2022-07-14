@@ -9,46 +9,41 @@
 </head>
 
 <body>
-    <form method="POST" class="post-form" action="">
-        {% csrf_token %}
-        <div class="container">
-            <br>
+
+
+    <div class="container">
+        <br>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <h3>Enter Details</h3>
+            </div>
+        </div>
+        <form method="POST" class="post-form" action="" enctype="multipart/form-data">
+            {% csrf_token %}
             <div class="form-group row">
-                <label class="col-sm-1 col-form-label"></label>
-                <div class="col-sm-4">
-                    <h3>Enter Details</h3>
-                </div>
+                <label for="" class="form-label">Staff ID</label>
+                <input type="text" Required name="staffid" class="form-control">
             </div>
             <div class="form-group row">
-                <label class="col-sm-1 col-form-label">Staff ID:</label>
-                <div class="col-sm-4">
-                    {{ form.staffid }}
-                </div>
+                <label for="" class="form-label">Staff Name</label>
+                <input type="text" Required name="staffname" class="form-control">
             </div>
             <div class="form-group row">
-                <label class="col-sm-1 col-form-label">Staff Name:</label>
-                <div class="col-sm-4">
-                    {{ form.staffname }}
-                </div>
+                <label for="" class="form-label">Staff Email</label>
+                <input type="text" Required name="staffEmail" class="form-control">
             </div>
             <div class="form-group row">
-                <label class="col-sm-1 col-form-label">Staff Email</label>
-                <div class="col-sm-4">
-                    {{ form.staffEmail }}
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-sm-1 col-form-label">Staff Image</label>
-                <div class="col-sm-4">
-                    {{ form.staffImage }}
-                </div>
+                <label for="" class="form-label">Staff Image</label>
+                <input type="file" Required name="staffImage" class="form-control">
             </div>
             <div class="form-group row">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-        </div>
+        </form>
+    </div>
 
-    </form>
+
 </body>
 
 </html>

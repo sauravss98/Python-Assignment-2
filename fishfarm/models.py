@@ -1,13 +1,13 @@
 from django.db import models
 
-# Create your models here.
+
 class ManageStaff(models.Model):
-    staffid=models.IntegerField()
+    staffid=models.CharField(max_length=50)
     staffname=models.TextField()
     staffEmail=models.EmailField()
     staffImage=models.ImageField(upload_to="image/")
     def __str__(self):
-        return self.staffid
+        return self.staffname
 
 class ManageDam(models.Model):
     damName=models.TextField()
