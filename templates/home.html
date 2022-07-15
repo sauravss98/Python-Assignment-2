@@ -4,18 +4,18 @@
 {% if user.is_authenticated %}
 {% load static %}
 
-<nav class="navbar navbar-dark bg-primary">
-        <div class="container-fluid main-navbar">
-            <a class="btn btn-primary" role="button" aria-disabled="true" href="{% url 'dashboard' %}">Home</a>
-            <a class="btn btn-primary" role="button" aria-disabled="true" href="{% url 'damentry' %}">Dam</a>
-            <a class=" btn btn-primary" role="button" aria-disabled="true" href="{% url 'staffshow' %}">Staff</a>
-            <a class=" btn btn-primary" role="button" aria-disabled="true" href="{% url 'departmentshow' %}">Department</a>
-            <a class=" btn btn-primary" role="button" aria-disabled="true" href="{% url 'fishshow' %}">Fish</a>
-            <a class=" btn btn-primary" role="button" aria-disabled="true" href="{% url 'creditshow' %}">Credit</a>
-            <a class=" btn btn-primary" role="button" aria-disabled="true" href="{% url 'salesshow' %}">Sales</a>
-        </div>
-</nav>
-<div class="container-fluid">
+<!-- <nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid main-navbar">
+        <a class="btn btn-primary" role="button" aria-disabled="true" href="{% url 'dashboard' %}">Home</a>
+        <a class="btn btn-primary" role="button" aria-disabled="true" href="{% url 'damentry' %}">Dam</a>
+        <a class=" btn btn-primary" role="button" aria-disabled="true" href="{% url 'staffshow' %}">Staff</a>
+        <a class=" btn btn-primary" role="button" aria-disabled="true" href="{% url 'departmentshow' %}">Department</a>
+        <a class=" btn btn-primary" role="button" aria-disabled="true" href="{% url 'fishshow' %}">Fish</a>
+        <a class=" btn btn-primary" role="button" aria-disabled="true" href="{% url 'creditshow' %}">Credit</a>
+        <a class=" btn btn-primary" role="button" aria-disabled="true" href="{% url 'salesshow' %}">Sales</a>
+    </div>
+</nav> -->
+<div class="container-fluid align-center">
     <h1 class="heading1">Welcome to The Home Page</h1>
 
     <div class="card" style="width: 18rem;">
@@ -23,7 +23,15 @@
             <li class="list-group-item"><a class="btn btn-primary " role="button" aria-disabled="true"
                     href="{% url 'damentry' %}">Dam</a></li>
             <li class="list-group-item"><a class=" btn btn-primary" role="button" aria-disabled="true"
-                    href="fishshow">Fish</a>
+                    href="{% url 'staffshow' %}">Staff</a></li>
+            <li class="list-group-item"><a class=" btn btn-primary" role="button" aria-disabled="true"
+                    href="fishshow">Fish</a></li>
+            <li class="list-group-item"><a class=" btn btn-primary" role="button" aria-disabled="true"
+                    href="{% url 'departmentshow' %}">Department</a></li>
+            <li class="list-group-item"><a class=" btn btn-primary" role="button" aria-disabled="true"
+                    href="{% url 'creditshow' %}">Credit</a></li>
+            <li class="list-group-item"><a class=" btn btn-primary" role="button" aria-disabled="true"
+                    href="{% url 'salesshow' %}">Sales</a></li>
             <li class="list-group-item"><a class="btn btn-danger " role="button" aria-disabled="true"
                     href=" {% url 'logout' %}">Log Out</a></li>
         </ul>
