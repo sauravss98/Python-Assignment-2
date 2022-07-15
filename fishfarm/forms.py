@@ -21,3 +21,14 @@ class DepartmentForm(forms.ModelForm):
     class Meta:
         model=ManageDepartment
         fields=['departmentName','departmentCount']
+
+class SalesForm(forms.ModelForm):
+    class Meta:
+        model=ManageSales
+        fields=['fishSales','salesDate','fishName']
+
+class CreditForm(forms.ModelForm):
+    class Meta:
+        model=ManageCredit
+        fields=['creditYear','totalCredit']
+

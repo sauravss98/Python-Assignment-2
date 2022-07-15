@@ -3,14 +3,17 @@ import os
 from django.contrib import messages
 from django.http import request
 from django.shortcuts import render, redirect
-from .forms import DamForm,  FishForm, DepartmentForm,StaffForm
-from .models import ManageDam, ManageFish, ManageDepartment,ManageStaff
+from .forms import *
+from .models import *
 
 
 # Create your views here.
+
+
+
 def DashboardView(request):
     dams = ManageDam.objects.all()
-    return render(request, 'dashboard.html', {"dams": dams})
+    return render(request, 'home.html', {"dams": dams})
 
 
 def DamView(request):
@@ -183,3 +186,78 @@ def DestroyViewDepartment(request, id):
     department = ManageDepartment.objects.get(id=id)
     department.delete()
     return redirect("/departmentshow")
+
+# Sales
+
+def SalesAdd(request):
+    if request.method == "POST":
+        form = SalesForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/salesshow")
+    else:
+        form = SalesForm()
+    return render(request, "fishfarm/salesadd.html", {"form": form})
+
+
+def ViewSales(request):
+    sales = ManageSales.objects.all()
+    return render(request, "fishfarm/salesshow.html", {"sales": sales})
+
+
+def EditViewSales(request, id):
+    sale = ManageSales.objects.get(id=id)
+    return render(request, "fishfarm/salesedit.html", {"sale": sale})
+
+
+def UpdateViewSales(request, id):
+    sale = ManageSales.objects.get(id=id)
+    form = SalesForm(request.POST, instance=sale)
+    if form.is_valid():
+        form.save()
+        return redirect("/salesshow")
+    return render(request, "fishfarm/salesedit.html", {"sale": sale})
+
+
+def DestroyViewSales(request, id):
+    sale = ManageSales.objects.get(id=id)
+    sale.delete()
+    return redirect("/salesshow")
+
+# Credit
+
+def CreditAdd(request):
+    if request.method == "POST":
+        form = CreditForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/creditshow")
+    else:
+        form = CreditForm()
+    return render(request, "fishfarm/creditadd.html", {"form": form})
+
+
+def ViewCredit(request):
+    credits = ManageCredit.objects.all()
+    return render(request, "fishfarm/creditshow.html", {"credits": credits})
+
+
+def EditViewCredit(request, id):
+    credit = ManageCredit.objects.get(id=id)
+    return render(request, "fishfarm/creditedit.html", {"credit": credit})
+
+
+def UpdateViewCredit(request, id):
+    credit = ManageCredit.objects.get(id=id)
+    form = CreditForm(request.POST, instance=credit)
+    if form.is_valid():
+        form.save()
+        return redirect("/creditshow")
+    return render(request, "fishfarm/creditedit.html", {"credit": credit})
+
+
+def DestroyViewCredit(request, id):
+    credit = ManageCredit.objects.get(id=id)
+    credit.delete()
+    return redirect("/creditshow")
+

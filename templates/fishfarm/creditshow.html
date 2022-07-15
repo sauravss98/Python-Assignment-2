@@ -23,21 +23,19 @@
     <table class=" table table-striped table-bodered table-sm">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Dam Name</th>
-                        <th>Dam Location</th>
-                        <th>Dam Height</th>
+                        <th>Credit Year</th>
+                        <th>Total Credit</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for dam in dams %}
+                    {% for credit in credits %}
                     <tr>
-                        <td>{{ dam.damName }}</td>
-                        <td>{{ dam.damLocation }}</td>
-                        <td>{{ dam.damHeight }}</td>
+                        <td>{{ credit.creditYear }}</td>
+                        <td>{{ credit.totalCredit }}</td>
                         <td>
-                            <a href="/edit/{{ dam.id }}"><button type="button" class="btn btn-outline-primary btn-sm">Edit</button></a>
-                            <a href="/delete/{{ dam.id }}"><button type="button" class="btn btn-outline-primary btn-sm">Delete</button></a>
+                            <a href="/creditedit/{{ credit.id }}"><button type="button" class="btn btn-outline-primary btn-sm">Edit</button></a>
+                            <a href="/creditdelete/{{ credit.id }}"><button type="button" class="btn btn-outline-primary btn-sm">Delete</button></a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -45,7 +43,7 @@
                 </table>
                 <br>
                 <br>
-                <center><a href="{% url 'dam' %}" class="btn btn-primary">Add New Record</a></center>
+                <center><a href="{% url 'creditadd' %}" class="btn btn-primary">Add New Record</a></center>
 </body>
 
 </html>

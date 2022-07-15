@@ -30,16 +30,20 @@ class ManageFish(models.Model):
         return self.fishName
 
 class ManageSales(models.Model):
+    fishName = models.TextField()
     fishSales=models.FloatField()
+    salesDate=models.DateField()
     def __str__(self):
-        return self.fishSales
+        return self.fishName
 
 class ManageCredit(models.Model):
+    creditYear=models.TextField()
     totalCredit=models.FloatField()
     def __str__(self):
-        return self.totalCredit
+        return self.creditYear
 
 class ManageTimeline(models.Model):
     harvestTime=models.DateField()
+    fishType=models.TextField()
     def __str__(self):
         return self.harvestTime

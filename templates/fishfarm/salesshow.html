@@ -23,21 +23,21 @@
     <table class=" table table-striped table-bodered table-sm">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Dam Name</th>
-                        <th>Dam Location</th>
-                        <th>Dam Height</th>
+                        <th>Fish Name</th>
+                        <th>Total Sales</th>
+                        <th>Sales Date</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for dam in dams %}
+                    {% for sale in sales %}
                     <tr>
-                        <td>{{ dam.damName }}</td>
-                        <td>{{ dam.damLocation }}</td>
-                        <td>{{ dam.damHeight }}</td>
+                        <td>{{ sale.fishName }}</td>
+                        <td>{{ sale.fishSales }}</td>
+                        <td>{{ sale.salesDate }}</td>
                         <td>
-                            <a href="/edit/{{ dam.id }}"><button type="button" class="btn btn-outline-primary btn-sm">Edit</button></a>
-                            <a href="/delete/{{ dam.id }}"><button type="button" class="btn btn-outline-primary btn-sm">Delete</button></a>
+                            <a href="/salesedit/{{ sale.id }}"><button type="button" class="btn btn-outline-primary btn-sm">Edit</button></a>
+                            <a href="/salesdelete/{{ sale.id }}"><button type="button" class="btn btn-outline-primary btn-sm">Delete</button></a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -45,7 +45,6 @@
                 </table>
                 <br>
                 <br>
-                <center><a href="{% url 'dam' %}" class="btn btn-primary">Add New Record</a></center>
+                <center><a href="{% url 'salesadd' %}" class="btn btn-primary">Add New Record</a></center>
 </body>
-
 </html>

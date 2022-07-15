@@ -11,12 +11,13 @@
 <body>
     <nav class="navbar navbar-dark bg-primary">
         <div class="container-fluid main-navbar">
+            <a class="btn btn-primary" role="button" aria-disabled="true" href="{% url 'dashboard' %}">Home</a>
             <a class="btn btn-primary" role="button" aria-disabled="true" href="{% url 'damentry' %}">Dam</a>
-            <a class=" btn btn-primary" role="button" aria-disabled="true" href="#">Staff</a>
-            <a class=" btn btn-primary" role="button" aria-disabled="true" href="#">Department</a>
-            <a class=" btn btn-primary" role="button" aria-disabled="true" href="fishshow">Fish</a>
-            <a class=" btn btn-primary" role="button" aria-disabled="true" href="#">Credit</a>
-            <a class=" btn btn-primary" role="button" aria-disabled="true" href="#">Sales</a>
+            <a class=" btn btn-primary" role="button" aria-disabled="true" href="{% url 'staffshow' %}">Staff</a>
+            <a class=" btn btn-primary" role="button" aria-disabled="true" href="{% url 'departmentshow' %}">Department</a>
+            <a class=" btn btn-primary" role="button" aria-disabled="true" href="{% url 'fishshow' %}">Fish</a>
+            <a class=" btn btn-primary" role="button" aria-disabled="true" href="{% url 'creditshow' %}">Credit</a>
+            <a class=" btn btn-primary" role="button" aria-disabled="true" href="{% url 'salesshow' %}">Sales</a>
         </div>
     </nav>
     <table class="table table-striped table-bodered table-sm">
